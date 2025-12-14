@@ -8,6 +8,8 @@ import UserList from './user-manage/UserList';
 import RoleList from './right-manage/RoleList';
 import RightList from './right-manage/RightList';
 import NoPermission from './nopermission/NoPermission';
+// css
+import './NewsSandBox.css'
 const { Content } = Layout;
 
 const NewsSandBox = () => {

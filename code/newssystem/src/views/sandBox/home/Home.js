@@ -4,8 +4,7 @@ import { Button } from 'antd';
 const Home = () => {
   return (
     <div>
-      Home
-      <Button type="primary">Primary Button</Button>
+      <Button type="primary">Button</Button>
     </div>
   );
 }
