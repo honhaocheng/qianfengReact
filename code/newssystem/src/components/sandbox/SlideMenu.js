@@ -70,20 +70,34 @@ const SlideMenu = (props) => {
   }, [])
 
   const checkPagePermission = (item) => {
-    return item.pagepermisson
+    return !!item.pagepermisson
   }
 
   const renderMenu = (menuList) => {
     return menuList.map(item => {
       if (item.children?.length && checkPagePermission(item)) {
-        return <SubMenu key={item.key} icon={iconList[item.key]} title={item.title}>
-          {renderMenu(item.children)}
-        </SubMenu>
+        return (
+          <SubMenu
+            key={item.key}
+            icon={iconList[item.key]}
+            title={item.title}
+          >
+            {renderMenu(item.children)}
+          </SubMenu>
+        )
       }
-      return checkPagePermission(item) && <Menu.Item key={item.key} icon={iconList[item.key]} onClick={() => {
-        // console.log(`props`, props)
-        props.history.push(item.key)
-      }}>{item.title}</Menu.Item>
+      return checkPagePermission(item) && (
+        <Menu.Item
+          key={item.key}
+          icon={iconList[item.key]}
+          onClick={() => {
+            // console.log(`props`, props)
+            props.history.push(item.key)
+          }}
+        >
+          {item.title}
+        </Menu.Item>
+      )
     })
   }
   console.log(`props.location`, props.location)

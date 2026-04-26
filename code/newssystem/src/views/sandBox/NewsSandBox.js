@@ -28,6 +28,7 @@ const NewsSandBox = () => {
             minHeight: 280,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
+            overflow: 'auto'
           }}
         >
           <Switch>
